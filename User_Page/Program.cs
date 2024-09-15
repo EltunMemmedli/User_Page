@@ -128,6 +128,25 @@ if(int.TryParse(input, out choose) && choose > 0 && choose < 3)
                                                 }
 
                                             }
+                                        Kec:
+                                            Thread.Sleep(2000);
+                                            Console.WriteLine("\nPress 'f' to return to the start or any other key to exit...");
+
+                                            string Kec = Console.ReadLine();
+
+                                            if (Kec.ToLower() == "f")
+                                            {
+                                                Console.Clear();
+                                                goto Secim;
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+                                                Console.WriteLine("Duzgun duymeye basdiginizdan emin olun!");
+
+
+                                                goto Kec;
+                                            }
                                         }
                                         else
                                         {
@@ -204,8 +223,27 @@ if(int.TryParse(input, out choose) && choose > 0 && choose < 3)
                                         goto Delete;
                                     }
                                 }
-                                   
-                                
+                            Kec:
+                                Thread.Sleep(2000);
+                                Console.WriteLine("\nPress 'f' to return to the start or any other key to exit...");
+
+                                string Kec = Console.ReadLine();
+
+                                if (Kec.ToLower() == "f")
+                                {
+                                    Console.Clear();
+                                    goto Secim;
+                                }
+                                else
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Duzgun duymeye basdiginizdan emin olun!");
+
+
+                                    goto Kec;
+                                }
+
+
                             }
 
                             else if(secim == 3)
@@ -334,6 +372,25 @@ if(int.TryParse(input, out choose) && choose > 0 && choose < 3)
                                         goto Updated;
                                     }
                                 }
+                            Kec:
+                                Thread.Sleep(2000);
+                                Console.WriteLine("\nPress 'f' to return to the start or any other key to exit...");
+
+                                string Kec = Console.ReadLine();
+
+                                if (Kec.ToLower() == "f")
+                                {
+                                    Console.Clear();
+                                    goto Secim;
+                                }
+                                else
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Duzgun duymeye basdiginizdan emin olun!");
+
+
+                                    goto Kec;
+                                }
                             }
 
                             else if(secim == 4)
@@ -404,6 +461,25 @@ if(int.TryParse(input, out choose) && choose > 0 && choose < 3)
                                         }
                                     }
                                 }
+                            Kec:
+                                Thread.Sleep(2000);
+                                Console.WriteLine("\nPress 'f' to return to the start or any other key to exit...");
+
+                                string Kec = Console.ReadLine();
+
+                                if (Kec.ToLower() == "f")
+                                {
+                                    Console.Clear();
+                                    goto Secim;
+                                }
+                                else
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Duzgun duymeye basdiginizdan emin olun!");
+
+
+                                    goto Kec;
+                                }
                             }
                         }
                         else
@@ -419,7 +495,7 @@ if(int.TryParse(input, out choose) && choose > 0 && choose < 3)
                     else if(password == allUser.Password && allUser.UserRole == UserRole.User)
                     {
                         
-
+                        Option: 
                         Console.WriteLine("\n\nSelect option:\n" +
                                              "1.Update profile\n" +
                                              "===================");
@@ -494,6 +570,33 @@ if(int.TryParse(input, out choose) && choose > 0 && choose < 3)
                                     }
                                 }
                             }
+                        Kec:
+                            Thread.Sleep(2000);
+                            Console.WriteLine("\nPress 'f' to return to the start or any other key to exit...");
+
+                            string Kec = Console.ReadLine();
+
+                            if (Kec.ToLower() == "f")
+                            {
+                                Console.Clear();
+                                goto Option;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Duzgun duymeye basdiginizdan emin olun!");
+
+
+                                goto Kec;
+                            }
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Invalid syntax!");
+                            Thread.Sleep(1000);
+                            Console.Clear();
+                            goto Option;
                         }
                     }
                     /*return;*/
@@ -543,6 +646,7 @@ if(int.TryParse(input, out choose) && choose > 0 && choose < 3)
         if(int.TryParse(Age, out age) && age > 0)
         {
             Console.Clear();
+            Email2:
             Console.WriteLine("Enter your email");
             string email = Console.ReadLine();
 
@@ -553,16 +657,30 @@ if(int.TryParse(input, out choose) && choose > 0 && choose < 3)
             if(!(string.IsNullOrEmpty(email)) && IsMatch)
             {
                 Console.Clear();
-
+                Password2:
                 Console.WriteLine("Enter your password");
                 string password = Console.ReadLine();
                 if (!(string.IsNullOrEmpty(password)))
                 {
                     Users.SignUp(name, surname, age, email, password, UserRole.User);
                 }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Invalid syntax!");
+                    Thread.Sleep(1000);
+                    Console.Clear();
+                    goto Password2;
+                }
 
-
-
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Invalid syntax!");
+                Thread.Sleep(1000);
+                Console.Clear();
+                goto Email2;
             }
 
 
