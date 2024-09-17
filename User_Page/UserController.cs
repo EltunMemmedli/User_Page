@@ -240,20 +240,18 @@ namespace User_Page
             Users.Add(newUser);
             int counter = 1;
             Console.Clear();
-            foreach (Users allUsers in Users)
-            {
-
-                if(allUsers.UserRole == UserRole.User)
-                {
+            
+            
+               
                     Console.WriteLine($"\nUser - ID: {counter++}" +
                                         $"\nYour info:\n" +
-                                        $"Name: {allUsers.Name},\n" +
-                                        $"Surname: {allUsers.Surname},\n" +
-                                        $"Age: {allUsers.Age},\n" +
-                                        $"Email: {allUsers.Email},\n" +
-                                        $"Role: {allUsers.UserRole}");
-                }
-            }
+                                        $"Name: {newUser.Name},\n" +
+                                        $"Surname: {newUser.Surname},\n" +
+                                        $"Age: {newUser.Age},\n" +
+                                        $"Email: {newUser.Email},\n" +
+                                        $"Role: {newUser.UserRole}");
+                
+            
         }
 
         
